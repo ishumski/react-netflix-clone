@@ -22,8 +22,10 @@ font-weight: 800;
 margin-bottom:20px;
 `;
 
-export const MoviePlot = styled.p`
-font-size: 1.2rem;
+export const MovieOverwiew = styled.p`
+font-size: 1rem;
+font-weight: 500;
+height:100px;
 `;
 
 export const ButtonBox = styled.div`
@@ -38,10 +40,15 @@ align-items:center;
 padding: 8px 23px;
 border-radius: 5px;
 border: none;
+outline: none;
 margin-right: 10px;
 background: lightgrey;
 font-weight: 700; 
 cursor:pointer;
+color: black;
+&:hover{
+  background: #ffffff;
+}
 `;
 
 export const MoreInfoButton = styled.button`
@@ -51,8 +58,11 @@ border-radius: 5px;
 padding: 8px 23px;
 border-radius: 5px;
 border: none;
-background: rgba(128, 128, 128, 0.4);
+background: rgba(109, 109, 110, 0.7);
 font-weight: 700; 
 color: #c5c6c7;
 cursor:pointer;
+&:hover{
+  background: rgba(109, 109, 110, 0.4);
+}
 `;

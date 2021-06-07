@@ -1,9 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../api/index';
 import Requests from '../../api/request'
-import { Root, Content, MovieTitle, MoviePlot, ButtonBox, PlayButton, MoreInfoButton } from './style';
+import {
+  Root,
+  Content,
+  MovieTitle,
+  MovieOverwiew,
+  ButtonBox,
+  PlayButton,
+  MoreInfoButton
+} from './style';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import InfoIcon from '@material-ui/icons/Info';
+
+
+const truncate = (str, n) => {
+  return str?.length > n ? `${str.substring(0, n - 1)}...` : str;
+}
 
 const Banner = () => {
   const [movie, setMovie] = useState(null);
@@ -23,24 +36,26 @@ const Banner = () => {
 
   return (
     <Root backgroundImage={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}>
-      <Content>
-        <MovieTitle>
-          {movie?.title || movie?.name || movie?.original_name}
-        </MovieTitle>
-        <MoviePlot>
-          {movie?.overview}
-        </MoviePlot>
-        <ButtonBox>
-          <PlayButton>
-            <PlayArrowIcon style={{ marginRight: '10' }} />
+    
+        <Content>
+          <MovieTitle>
+            {movie?.title || movie?.name || movie?.original_name}
+          </MovieTitle>
+          <MovieOverwiew>
+            {truncate( movie?.overview, 200)}
+          </MovieOverwiew>
+          <ButtonBox>
+            <PlayButton>
+              <PlayArrowIcon style={{ marginRight: '10' }} />
             Play
           </PlayButton>
-          <MoreInfoButton>
-            <InfoIcon style={{ marginRight: '10' }}/>
+            <MoreInfoButton>
+              <InfoIcon style={{ marginRight: '10' }} />
             More Info
           </MoreInfoButton>
-        </ButtonBox>
-      </Content>
+          </ButtonBox>
+        </Content>
+     
     </Root>
   )
 }

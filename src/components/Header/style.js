@@ -45,9 +45,7 @@ font-weight: 700;
 }`)}
 `;
 
-export const ProfileImg = styled.img`
-
-`;
+export const ProfileImg = styled.img``;
 
 export const HeaderWrapper = styled.div`
 display: flex;

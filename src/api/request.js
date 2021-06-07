@@ -4,4 +4,8 @@ export default class Request {
   static get NETFLIX_ORIGINALS() {
     return `/discover/tv?api_key=${API_KEY}`
   }
+
+  static get TRENDING() {
+    return `/trending/all/week?api_key=${API_KEY}`
+  }
 }

@@ -1,5 +1,13 @@
 import { Wrapper } from "../common/wrapper/style";
-import { HeaderWrapper, Logo, NavList, NavListItem, NavListItemLink, ProfileImg, Root } from "./style";
+import {
+  HeaderWrapper,
+  Logo,
+  NavList,
+  NavListItem,
+  NavListItemLink,
+  ProfileImg,
+  Root
+} from "./style";
 
 
 const navItems = [
